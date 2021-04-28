@@ -53,7 +53,7 @@ class="am-text-warning">免责声明：本站不生产解析接口，本站只�
 var store;
 $(function() {
     store = $.AMUI.store;
-    // 显示操作演示 GIF
+    // 解析
     var playerHtml = '<style type="text/css">* {margin: 0; padding: 0;}html, body {width: 100%; height: 100%;}body{display: table;}.img{text-align: center; vertical-align: middle; display: table-cell;}img{width: 100%; max-width: 500px;}</style>';
     playerHtml += '  <iframe src="https://z1.m1907.cn/?jx=" rel="nofollow" id="player" width="100%" height="100%" allowTransparency="true" allowfullscreen="true" frameborder="0" scrolling="no"></iframe>';
     $("#ty-vip-player").contents().find("body").html(playerHtml);
@@ -72,17 +72,6 @@ $(function() {
     $("#btn-vip-play").click(function() {
         refreshVideo();
     });
-
-    // 切换解析接口
-	$("#sva").on('change', function() {
-		var obj=$(this).find('option').eq(this.selectedIndex),ad=obj.data('ad');
-		// 记录接口地址
-		TySiteInfo.videoApi = TYBase.decode($(this).val());
-		// 更新视频播放
-		refreshVideo();
-		// 改变显示的接口名 
-		layer.msg("切换接口为 " + obj.attr('title')+ (ad=="1"?" 该接口中可能含有广告，请勿相信！":"") );
-	});
 	
 	if($("#video-url").val()!='')refreshVideo();
 	
@@ -99,20 +88,6 @@ $(function() {
 		});
     }
 });
-
-// 刷新视频播放
-function refreshVideo() {
-    var videoUrl = $("#video-url").val();
-    if(videoUrl == "") {
-        layer.msg("链接不能为空！");
-        return false;
-    }
-    $("#ty-vip-player").attr("src", TySiteInfo.videoApi + videoUrl);
-    // 记录用户数据
-    if (store.enabled) {
-        store.set("videoApi", TySiteInfo.videoApi);    // 记录所用的api接口
-    }
-}
 </script>
 
 <script>
