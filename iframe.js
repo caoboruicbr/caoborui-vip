@@ -14,7 +14,7 @@ function setIframeHeight(iframe) {
 
 };
 
-$(".flexiframe").each(function (index) {
+$(".iframe").each(function (index) {
 
     var that = $(this);
 
