@@ -4,15 +4,13 @@ function setIframeHeight(iframe) {
 
         var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
 
-        if (iframeWin.document.body) {
+        if (iframeWin.document.body)
 
             iframe.height = iframeWin.document.body.scrollHeight;
 
         }
 
     }
-
-};
 
 $(".iframe").each(function (index) {
 
