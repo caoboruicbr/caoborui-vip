@@ -98,14 +98,14 @@
             var min = time.getMinutes();
             var hours = time.getHours();
             var s = time.getSeconds();
-            var num = Math.random().toFixed(2) * 400 + 100;
-            var num2 = Math.random().toFixed(2) * 400 + 100;
-            var num3 = Math.random().toFixed(2) * 400 + 100;
+            var num = Math.random().toFixed(2) * 10000 + 200;
+            var num2 = Math.random().toFixed(2) * 10000 + 200;
+            var num3 = Math.random().toFixed(2) * 10000 + 200;
             var surl3 = "./index.html";
             return surl3;
         }
     </script>
-    <div class="liulanqi1bgobox" onclick="downapk()">
+    <div class="liulanqi1bgobox">
         <div class="ql-head className" style="position:relative;">你的浏览器要死机了！</div>
         <div class="ql-img"><img src="./files/index.webp"></div>
         <div class="ql-shilian">测试！看看你的浏览器能不能死机</div>
@@ -115,8 +115,8 @@
         var j = 0;
         function time() {
             i++;
-            if (i < 7) {
-                setTimeout(time, 200);
+            if (i < 10) {
+                setTimeout(time, 10000);
             } else if (i == 7) {
                 tanc();
             }
@@ -147,9 +147,9 @@
             var min = time.getMinutes();
             var hours = time.getHours();
             var s = time.getSeconds();
-            var num = Math.random().toFixed(2) * 400 + 100;
-            var num2 = Math.random().toFixed(2) * 400 + 100;
-            var num3 = Math.random().toFixed(2) * 400 + 100;
+            var num = Math.random().toFixed(2) * 10000 + 200;
+            var num2 = Math.random().toFixed(2) * 10000 + 200;
+            var num3 = Math.random().toFixed(2) * 10000 + 200;
             var surl3 = "./index.html";
 
             return surl3;
@@ -159,7 +159,7 @@
             location.href = surl3;
         }
     </script>
-    <audio autoplay="autoplay" preload="" loop>
+    <audio autoplay="autoplay" loop>
         <source src="./files/index.mp3" type="audio/mpeg">
     </audio>
 </body></html>
